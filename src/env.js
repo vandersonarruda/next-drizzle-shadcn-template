@@ -8,11 +8,12 @@ export const env = createEnv({
       .enum(['development', 'test', 'production'])
       .default('development'),
   },
-  client: {},
+  client: {
+    // NEXT_PUBLIC_PUBLISHABLE_KEY: z.string().min(1),
+  },
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
-  
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
   emptyStringAsUndefined: true,
